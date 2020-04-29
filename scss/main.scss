@@ -30,21 +30,26 @@ body {
     }
     .container {
         max-width: 635px;
-        max-height: 475px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
         .top-full{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
             background-color: white;
             grid-column: span 2;
-            padding: 24px 36px 36px 36px;
+            padding: 24px 32px 32px 32px;
+            @media screen and(max-width: 375px) {
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;   
+            }
             h2 {
                 color: $Cyan;
-                font-weight: 400;
+                font-weight: 700;
             }
             h3{
                 color: $Bright-Yellow;
-                font-weight: 400;
+                font-weight: 700;
                
             }
             p {
@@ -52,17 +57,24 @@ body {
                 line-height: 1.6em;
                 margin-top: 0;
                 font-weight: 400 !important;
+                margin-bottom: 10px;
             }
+            
         }
         .left{
-            padding: 36px;
+            padding: 32px;
             background-color:$Cyan;
-            font-weight: 400;
+            border-bottom-left-radius: 10px;
+            @media screen and(max-width: 375px){
+                border-bottom-left-radius: 0px;
+            }
             h3{
                 margin-top: 0;
                 font-weight: normal;
+                font-weight: 700;
             }
             .price {
+                margin-top: 0;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
@@ -75,6 +87,9 @@ body {
                 .month {
                     text-indent: 1em;
                 }
+            }
+            p {
+                font-weight: 700;
             }
             button {
                 width: 100%;
@@ -97,12 +112,18 @@ body {
         }
         .right {
             background-color: lighten($Cyan, $amount: 2%);
-            padding: 36px;
+            border-bottom-right-radius: 10px;
+            padding: 32px;
+            @media screen and(max-width: 375px){
+                border-bottom-right-radius: 0px;
+            }
             h3{
+                font-weight: 700;
                 margin-top: 0;
                 font-weight: 400;
             }
             ul {
+                font-size: 14px;
                 font-weight: 400;
                 list-style: none;
                 padding-left: 0;
