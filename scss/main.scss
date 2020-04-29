@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+//Colors
+
+//Primary
+
+$Cyan: hsl(179, 62%, 43%);
+$Bright-Yellow: hsl(71, 73%, 54%);
+//Neutral
+
+$Light-Gray: hsl(204, 43%, 93%);
+$Grayish-Blue: hsl(218, 22%, 67%);
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    color: white;
+    }
+    .wrapper {
+        margin: auto;
+        max-width: 1440px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: $Light-Gray;
+        @media screen and(max-width:375px){
+            display: block; 
+    }
+    .container {
+        max-width: 635px;
+        max-height: 475px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        .top-full{
+            background-color: white;
+            grid-column: span 2;
+            padding: 24px 36px 36px 36px;
+            h2 {
+                color: $Cyan;
+                font-weight: 400;
+            }
+            h3{
+                color: $Bright-Yellow;
+                font-weight: 400;
+               
+            }
+            p {
+                color: $Grayish-Blue;
+                line-height: 1.6em;
+                margin-top: 0;
+                font-weight: 400 !important;
+            }
+        }
+        .left{
+            padding: 36px;
+            background-color:$Cyan;
+            font-weight: 400;
+            h3{
+                margin-top: 0;
+                font-weight: normal;
+            }
+            .price {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                color: $Light-Gray;
+                .number {
+                    color: white;
+                    font-size: 2em;
+                    font-weight: 400;
+                }
+                .month {
+                    text-indent: 1em;
+                }
+            }
+            button {
+                width: 100%;
+                height: 46px;
+                background-color: $Bright-Yellow;
+                border-style: none;
+                color: white;
+                border-radius: 5px;
+                margin-top: 1em;
+                cursor: pointer;
+                &:hover{
+                    background-color: darken($Cyan, $amount: 5%);
+                    box-shadow: inset 0 0 5px #333;
+                }
+            }
+        }
+        .right {
+            background-color: lighten($Cyan, $amount: 2%);
+            padding: 36px;
+            h3{
+                margin-top: 0;
+                font-weight: 400;
+            }
+            ul {
+                font-weight: 400;
+                list-style: none;
+                padding-left: 0;
+                line-height: 1.4em;
+                font-weight: lighter;
+                margin-bottom: 0;
+            }
+        }
+        @media screen and(max-width: 375px){
+            display: block;
+        }
+    }
+}
